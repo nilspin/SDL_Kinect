@@ -6,17 +6,17 @@
 int main(int argc, char *argv[])//_tmain(int argc, _TCHAR* argv[])////
 {
 
-/*Random number shit*/
+/*Random number stuff*/
 	std::random_device rd;//obtain random number from device
 	std::mt19937 eng(rd());//seed the generator
 	std::uniform_int_distribution<> distr(0, 255);
 
 
-/*Kinect shit*/
+/*Kinect stuff*/
 	IKinectSensor* sensor;
 
 	HRESULT hResult = S_OK;
-	hResult = GetDefaultKinectSensor(&sensor); //hate this non-OOP shit
+	hResult = GetDefaultKinectSensor(&sensor);
 	if (FAILED(hResult)){
 		std::cerr << "Error : GetDefaultKinectSensor" << std::endl;
 		return -1;
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])//_tmain(int argc, _TCHAR* argv[])////
 	int width; frameDescription->get_Width(&width);
 	int height; frameDescription->get_Height(&height);
 
-/*SDL init shit*/
+/*SDL init stuff*/
 	bool quit = false;
 	SDL_Init(SDL_INIT_EVERYTHING); //init
 	SDL_Event event; //event handler
